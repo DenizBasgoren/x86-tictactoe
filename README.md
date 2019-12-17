@@ -10,7 +10,7 @@ Before compiling, make sure you have NASM, and GCC installed. Note that this pro
 nasm -f elf32 -g -F dwarf tictactoe.asm
 ```
 
-Next, we need to use a linker. ld would be appropriate, however, since we need to import `time`, `rand`, and `srand` functions from standard C library, we use GCC's builtin linker. Locate where stdlib is in your system. For example, mine was in `/lib/libstdc++.a`. Now call the linker:
+Next, we need to use a linker. ld would be appropriate, however, since we need to import `time`, `rand`, and `srand` functions from standard C library, we use GCC's builtin linker. Locate where `libstdc++.a` (the C std library) is in your system. For example, mine was in `/lib/libstdc++.a`. Now call the linker:
 
 ```
 gcc -m32 -I/lib/libstdc++.a tictactoe.o -o tictactoe
